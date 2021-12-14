@@ -1,14 +1,9 @@
-import { chakra, Heading, Text } from '@chakra-ui/react'
+import { chakra, Container, Heading, Text } from '@chakra-ui/react'
 import Link from 'next/link'
-import Container from '../components/Container'
 
 export default function Custom404() {
   return (
     <Container>
-      <Heading mb={4} fontSize="18px">
-        Daedalus
-      </Heading>
-
       <Heading mb={4} fontSize="20px">
         Page not found (404)
       </Heading>

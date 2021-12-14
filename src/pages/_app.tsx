@@ -4,8 +4,6 @@ import { AppProps } from 'next/app'
 import { ChakraProvider, extendTheme } from '@chakra-ui/react'
 
 import myTheme from '../styles/theme'
-import AppProvider from '../hooks'
-import Sidebar from '../components/Sidebar'
 
 Router.events.on('routeChangeStart', () => {
   NProgress.start()
@@ -18,13 +16,9 @@ const theme = extendTheme(myTheme)
 
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (
-    <AppProvider>
-      <ChakraProvider theme={theme}>
-        <Sidebar>
-          <Component {...pageProps} />
-        </Sidebar>
-      </ChakraProvider>
-    </AppProvider>
+    <ChakraProvider theme={theme}>
+      <Component {...pageProps} />
+    </ChakraProvider>
   )
 }
 

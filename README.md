@@ -1,6 +1,3 @@
-# Daedalus
+# my site
 
-## What is it?
-
-Boilerplate with: NextJS, Typescript, Chakra UI, MobX, SWR, ESlint, Prettier e EditorConfig.
-
+Click <a href="https://gabrielnbds.dev">here</a> to take a look.
