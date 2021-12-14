@@ -1,0 +1,48 @@
+{
+  "name": "daedalus-web",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "export": "npm run build && next export -o _static"
+  },
+  "dependencies": {
+    "@chakra-ui/react": "^1.6.5",
+    "@emotion/react": "11",
+    "@emotion/styled": "11",
+    "axios": "^0.24.0",
+    "framer-motion": "5.2.0",
+    "inversify": "^6.0.1",
+    "inversify-react": "^1.0.0",
+    "mobx": "^6.3.6",
+    "mobx-react-lite": "^3.2.2",
+    "next": "^12.0.2",
+    "nprogress": "^0.2.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-hook-form": "^7.19.0",
+    "react-icons": "^4.2.0",
+    "reflect-metadata": "^0.1.13",
+    "swr": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^16.11.6",
+    "@types/nprogress": "^0.2.0",
+    "@types/react": "^17.0.0",
+    "@typescript-eslint/eslint-plugin": "^4.14.0",
+    "@typescript-eslint/parser": "^4.14.0",
+    "eslint": "^7.18.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-import-resolver-typescript": "^2.3.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-react": "^7.22.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "prettier": "^2.2.1",
+    "typescript": "^4.3.5"
+  }
+}
