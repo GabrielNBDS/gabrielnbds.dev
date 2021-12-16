@@ -1,19 +1,26 @@
-import { Box, Flex, Heading, Image, useColorModeValue } from '@chakra-ui/react'
+import {
+  Box,
+  Container,
+  Flex,
+  Heading,
+  Image,
+  useColorModeValue,
+} from '@chakra-ui/react'
 import React from 'react'
 import Section from '../section'
 
 const Skills: React.FC = () => {
   return (
     <>
-      <Heading as="h3" variant="section-title">
-        Skills
-      </Heading>
+      <Container>
+        <Heading as="h3" variant="section-title">
+          Skills
+        </Heading>
+      </Container>
 
       <Flex
         display="inline-flex"
-        w="calc(100vw - 16px)"
-        position="absolute"
-        left="16px"
+        w="100%"
         flexWrap="wrap"
         justifyContent="center"
         style={{ gap: '16px' }}

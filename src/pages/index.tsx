@@ -55,12 +55,12 @@ function Home() {
           <Section delay={1.2}>
             <Work />
           </Section>
-
-          <Section delay={1.6}>
-            <Skills />
-          </Section>
         </Stack>
       </Container>
+
+      <Section delay={1.6}>
+        <Skills />
+      </Section>
     </>
   )
 }
