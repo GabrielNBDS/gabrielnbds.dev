@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import {
+  Box,
   Container,
   Heading,
   Stack,
@@ -15,7 +16,7 @@ import ReachMe from '../components/home/reache-me'
 
 function Home() {
   return (
-    <>
+    <Box py={24}>
       <Head>
         <title>boilerplate</title>
         <meta
@@ -23,7 +24,7 @@ function Home() {
           content="https://nextjs.org/static/twitter-cards/home.jpg"
         />
       </Head>
-      <Container py={24}>
+      <Container>
         <Stack spacing={8} as="main">
           <Section>
             <Heading
@@ -58,10 +59,10 @@ function Home() {
         </Stack>
       </Container>
 
-      <Section delay={1.6}>
+      <Section pt={8} delay={1.6}>
         <Skills />
       </Section>
-    </>
+    </Box>
   )
 }
 
