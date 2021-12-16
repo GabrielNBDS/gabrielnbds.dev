@@ -19,7 +19,14 @@ const Header = () => {
   const { colorMode, toggleColorMode } = useColorMode()
 
   return (
-    <Box as="header" bg={useColorModeValue('white', 'gray.800')}>
+    <Box
+      as="header"
+      bg={useColorModeValue('#f5f5f540', '#20202380')}
+      css={{ backdropFilter: 'blur(10px)' }}
+      position="fixed"
+      zIndex={1}
+      w="100%"
+    >
       <Container py={2} maxW="container.md">
         <HStack justify="space-between">
           <Link href="/">
