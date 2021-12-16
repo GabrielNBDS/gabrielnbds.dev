@@ -84,7 +84,7 @@ const Blog: React.FC<Props> = ({ post }) => {
         <Heading as="h1" my={4}>
           {post.title}
         </Heading>
-        <Divider />
+        <Divider my={4} />
         <Box as="main">{parse(post.content)}</Box>
       </Container>
     </>
