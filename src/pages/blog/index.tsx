@@ -43,6 +43,39 @@ export const getServerSideProps: GetServerSideProps = async () => {
   }
 }
 
+const ListItem = ({ metadata, slug, title }: Post) => {
+  return (
+    <Stack>
+      <Text
+        fontSize={14}
+        fontWeight="500"
+        color={useColorModeValue('blackAlpha.700', 'whiteAlpha.500')}
+      >
+        {metadata.date}
+      </Text>
+
+      <Link href={`/blog/${slug}`}>
+        <Heading
+          cursor="pointer"
+          fontSize={24}
+          transition="all .2s"
+          _hover={{ color: 'teal.500' }}
+        >
+          {title}
+        </Heading>
+      </Link>
+
+      <Text>{metadata.truncate}</Text>
+
+      <Link href={`/blog/${slug}`}>
+        <Button as="a" colorScheme="teal" variant="link" maxW="max-content">
+          Continue reading
+        </Button>
+      </Link>
+    </Stack>
+  )
+}
+
 interface Props {
   posts: Post[]
 }
@@ -52,39 +85,7 @@ const Blog = ({ posts }: Props) => {
     <Container maxW="container.md" py={32}>
       <Stack spacing={8} divider={<Divider />}>
         {posts.map(post => (
-          <Stack>
-            <Text
-              fontSize={14}
-              fontWeight="500"
-              color={useColorModeValue('blackAlpha.700', 'whiteAlpha.500')}
-            >
-              {post.metadata.date}
-            </Text>
-
-            <Link href={`/blog/${post.slug}`}>
-              <Heading
-                cursor="pointer"
-                fontSize={24}
-                transition="all .2s"
-                _hover={{ color: 'teal.500' }}
-              >
-                {post.title}
-              </Heading>
-            </Link>
-
-            <Text>{post.metadata.truncate}</Text>
-
-            <Link href={`/blog/${post.slug}`}>
-              <Button
-                as="a"
-                colorScheme="teal"
-                variant="link"
-                maxW="max-content"
-              >
-                Continue reading
-              </Button>
-            </Link>
-          </Stack>
+          <ListItem {...post} />
         ))}
       </Stack>
     </Container>
