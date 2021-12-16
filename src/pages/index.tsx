@@ -16,7 +16,7 @@ import ReachMe from '../components/home/reache-me'
 
 function Home() {
   return (
-    <Box py={24}>
+    <Box pt={24} pb={6}>
       <Head>
         <title>boilerplate</title>
         <meta

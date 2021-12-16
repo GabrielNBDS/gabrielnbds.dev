@@ -79,7 +79,7 @@ const Blog: React.FC<Props> = ({ post }) => {
 
   return (
     <>
-      <Container maxW="80ch" py={16} mb={8}>
+      <Container maxW="80ch" pt={16} pb={6}>
         <Image src={post.metadata.cover.url} />
         <Heading as="h1" my={4}>
           {post.title}

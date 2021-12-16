@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export default function Custom404() {
   return (
-    <Container py={32}>
+    <Container py={24} pb={6}>
       <Heading mb={4} fontSize="20px">
         Page not found (404)
       </Heading>

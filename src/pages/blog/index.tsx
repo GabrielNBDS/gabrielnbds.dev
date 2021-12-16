@@ -82,7 +82,7 @@ interface Props {
 
 const Blog = ({ posts }: Props) => {
   return (
-    <Container maxW="container.md" py={32}>
+    <Container maxW="container.md" pt={24} pb={6}>
       <Stack spacing={8} divider={<Divider />}>
         {posts.map(post => (
           <ListItem {...post} />
