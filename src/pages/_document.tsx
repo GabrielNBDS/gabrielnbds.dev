@@ -16,6 +16,7 @@ export default class MyDocument extends Document {
             rel="stylesheet"
           />
           <link rel="stylesheet" type="text/css" href="/nprogress.css" />
+          <link rel="stylesheet" href="/dracula.css" />
         </Head>
         <body>
           <Main />
