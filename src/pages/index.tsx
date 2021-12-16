@@ -41,7 +41,7 @@ function Home() {
 
           <Section delay={0.4}>
             <VStack pt={8} align="flex-start">
-              <Heading Heading>Gabriel de Souza</Heading>
+              <Heading>Gabriel de Souza</Heading>
 
               <Text>
                 Digital jack of all trades ( Developer / Designer / DevOps )
