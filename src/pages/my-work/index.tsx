@@ -1,4 +1,5 @@
 import {
+  Box,
   Container,
   Divider,
   Heading,
@@ -10,6 +11,7 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react'
 import { FiArrowRight } from 'react-icons/fi'
+import Projects from '../../components/my-work/projects'
 import Section from '../../components/section'
 
 const works = [
@@ -68,17 +70,25 @@ const WorksListItem = ({ date, title, items }: Work) => {
 
 const MyWork = () => {
   return (
-    <Container py={24}>
-      <Section>
-        <Heading variant="section-title">Work</Heading>
+    <Box pt={24} pb={6}>
+      <Container>
+        <Section>
+          <Heading variant="section-title">Work</Heading>
 
-        <Stack spacing={4} divider={<Divider />}>
-          {works.map(work => (
-            <WorksListItem {...work} />
-          ))}
-        </Stack>
+          <Stack spacing={4} divider={<Divider />}>
+            {works.map(work => (
+              <WorksListItem {...work} />
+            ))}
+          </Stack>
+        </Section>
+      </Container>
+
+      <Section delay={0.4}>
+        <Container maxW="container.md">
+          <Projects />
+        </Container>
       </Section>
-    </Container>
+    </Box>
   )
 }
 

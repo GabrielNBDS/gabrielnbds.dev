@@ -3,6 +3,9 @@ import Router from 'next/router'
 import { AppProps } from 'next/app'
 import { ChakraProvider, extendTheme } from '@chakra-ui/react'
 
+import 'slick-carousel/slick/slick-theme.css'
+import 'slick-carousel/slick/slick.css'
+
 import myTheme from '../styles/theme'
 import Header from '../components/header'
 
