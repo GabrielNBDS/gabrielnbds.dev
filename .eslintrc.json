@@ -26,6 +26,8 @@
     "prettier"
   ],
   "rules": {
+    "import/no-extraneous-dependencies": "off",
+    "@typescript-eslint/no-empty-function": "off",
     "no-param-reassign": "off",
     "class-methods-use-this": "off",
     "no-nested-ternary": "off",

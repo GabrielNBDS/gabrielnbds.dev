@@ -1,0 +1,10 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://gabrielnbds.dev
+
+# Sitemaps
+Sitemap: https://gabrielnbds.dev/sitemap.xml
+Sitemap: https://example.com/server-sitemap.xml
