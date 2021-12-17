@@ -5,6 +5,7 @@ import { Box, Container, Divider, Heading, Image } from '@chakra-ui/react'
 import parse from 'html-react-parser'
 import hljs from 'highlight.js'
 import Post from '../../interfaces/post'
+import SEO from '../../components/seo'
 
 const api = Cosmic()
 
@@ -79,6 +80,15 @@ const Blog: React.FC<Props> = ({ post }) => {
 
   return (
     <>
+      <SEO
+        title={post.title}
+        description={post.metadata.short_description}
+        image={post.metadata.cover.url}
+        shouldIndexPage
+        ogWidth="771.83"
+        ogHeight="434.15"
+      />
+
       <Container maxW="80ch" pt={16} pb={6}>
         <Image src={post.metadata.cover.url} />
         <Heading as="h1" my={4}>

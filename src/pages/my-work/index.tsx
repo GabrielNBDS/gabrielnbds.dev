@@ -13,6 +13,7 @@ import {
 import { FiArrowRight } from 'react-icons/fi'
 import Projects from '../../components/my-work/projects'
 import Section from '../../components/section'
+import SEO from '../../components/seo'
 
 const works = [
   {
@@ -70,25 +71,33 @@ const WorksListItem = ({ date, title, items }: Work) => {
 
 const MyWork = () => {
   return (
-    <Box pt={24} pb={6}>
-      <Container>
-        <Section>
-          <Heading variant="section-title">Work</Heading>
+    <>
+      <SEO
+        title="My Work"
+        description="Info about Gabriel's work experience and projects"
+        shouldIndexPage
+      />
 
-          <Stack spacing={4} divider={<Divider />}>
-            {works.map(work => (
-              <WorksListItem {...work} />
-            ))}
-          </Stack>
-        </Section>
-      </Container>
+      <Box pt={24} pb={6}>
+        <Container>
+          <Section>
+            <Heading variant="section-title">Work</Heading>
 
-      <Section delay={0.4}>
-        <Container maxW="container.md">
-          <Projects />
+            <Stack spacing={4} divider={<Divider />}>
+              {works.map(work => (
+                <WorksListItem {...work} />
+              ))}
+            </Stack>
+          </Section>
         </Container>
-      </Section>
-    </Box>
+
+        <Section delay={0.4}>
+          <Container maxW="container.md">
+            <Projects />
+          </Container>
+        </Section>
+      </Box>
+    </>
   )
 }
 

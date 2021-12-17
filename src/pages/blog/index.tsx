@@ -11,6 +11,7 @@ import { GetServerSideProps } from 'next'
 import Cosmic from 'cosmicjs'
 import Link from 'next/link'
 import Post from '../../interfaces/post'
+import SEO from '../../components/seo'
 
 const api = Cosmic()
 
@@ -82,13 +83,21 @@ interface Props {
 
 const Blog = ({ posts }: Props) => {
   return (
-    <Container maxW="container.md" pt={24} pb={6}>
-      <Stack spacing={8} divider={<Divider />}>
-        {posts.map(post => (
-          <ListItem {...post} />
-        ))}
-      </Stack>
-    </Container>
+    <>
+      <SEO
+        title="Blog"
+        description="Gabriel's blog index page"
+        shouldIndexPage
+      />
+
+      <Container maxW="container.md" pt={24} pb={6}>
+        <Stack spacing={8} divider={<Divider />}>
+          {posts.map(post => (
+            <ListItem {...post} />
+          ))}
+        </Stack>
+      </Container>
+    </>
   )
 }
 
