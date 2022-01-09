@@ -41,13 +41,7 @@ function Home() {
             </Section>
 
             <Section delay={0.4}>
-              <VStack pt={8} align="flex-start">
-                <Heading>Gabriel de Souza</Heading>
-
-                <Text>
-                  Digital jack of all trades ( Developer / Designer / DevOps )
-                </Text>
-              </VStack>
+              <Heading pt={8}>Gabriel de Souza</Heading>
             </Section>
 
             <Section delay={0.8}>
