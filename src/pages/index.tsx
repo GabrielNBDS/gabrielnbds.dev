@@ -1,65 +1,21 @@
-import {
-  Box,
-  Container,
-  Heading,
-  Stack,
-  Text,
-  useColorModeValue,
-  VStack,
-} from '@chakra-ui/react'
-import React from 'react'
-import Section from '../components/section'
-import Skills from '../components/home/skills'
-import Work from '../components/home/work'
-import ReachMe from '../components/home/reache-me'
-import SEO from '../components/seo'
+import { Title } from '@mantine/core'
+import useSWR from 'swr'
+import ToggleThemeButton from '../components/ToggleThemeButton'
+import { fetcher } from '../hooks/swr'
 
 function Home() {
-  return (
-    <>
-      <SEO
-        title="GabrielNBDS"
-        description="Gabriel's website homepage"
-        shouldExcludeTitleSuffix
-        shouldIndexPage
-      />
+	const { error, data } = useSWR(
+		['https://pokeapi.co/api/v2/pokemon/ditto', true], fetcher
+	)
 
-      <Box pt={24} pb={6}>
-        <Container>
-          <Stack spacing={8} as="main">
-            <Section>
-              <Heading
-                textAlign="center"
-                p={3}
-                bg={useColorModeValue('whiteAlpha.600', 'whiteAlpha.300')}
-                borderRadius="lg"
-                fontWeight="500"
-                fontSize={16}
-              >
-                Hello, I&apos;m a full-stack developer based in Brazil!
-              </Heading>
-            </Section>
-
-            <Section delay={0.4}>
-              <Heading pt={8}>Gabriel de Souza</Heading>
-            </Section>
-
-            <Section delay={0.8}>
-              <ReachMe />
-            </Section>
-
-            <Section delay={1.2}>
-              <Work />
-            </Section>
-          </Stack>
-        </Container>
-
-        <Section pt={8} delay={1.6}>
-          <Skills />
-        </Section>
-      </Box>
-    </>
-  )
+	return (
+		<>
+			<Title>Hello World</Title>
+			<ToggleThemeButton />
+			{!data && !error && <p>Loading</p>}
+			{JSON.stringify(data)}
+		</>
+	)
 }
 
 export default Home

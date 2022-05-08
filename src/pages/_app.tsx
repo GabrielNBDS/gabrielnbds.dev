@@ -1,30 +1,37 @@
-import NProgress from 'nprogress'
-import Router from 'next/router'
 import { AppProps } from 'next/app'
-import { ChakraProvider, extendTheme } from '@chakra-ui/react'
+import {
+	ColorScheme,
+	ColorSchemeProvider,
+	MantineProvider
+} from '@mantine/core'
+import SWRProvider from '../hooks/swr'
+import { useLocalStorageValue } from '@mantine/hooks'
 
-import 'slick-carousel/slick/slick-theme.css'
-import 'slick-carousel/slick/slick.css'
+export default function App({ Component, pageProps}: AppProps) {
+	const [colorScheme, setColorScheme] = useLocalStorageValue<ColorScheme>({
+		key: 'mantine-color-scheme',
+		defaultValue: 'light',
+	})
 
-import myTheme from '../styles/theme'
-import Header from '../components/header'
+	const toggleColorScheme = (value?: ColorScheme) =>
+		setColorScheme(value || (colorScheme === 'dark' ? 'light' : 'dark'))
 
-Router.events.on('routeChangeStart', () => {
-  NProgress.start()
-})
-
-Router.events.on('routeChangeComplete', () => NProgress.done())
-Router.events.on('routeChangeError', () => NProgress.done())
-
-const theme = extendTheme(myTheme)
-
-const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
-  return (
-    <ChakraProvider theme={theme}>
-      <Header />
-      <Component {...pageProps} />
-    </ChakraProvider>
-  )
+	return (
+		<ColorSchemeProvider
+			colorScheme={colorScheme}
+			toggleColorScheme={toggleColorScheme}
+		>
+			<SWRProvider>
+				<MantineProvider
+					withGlobalStyles
+					withNormalizeCSS
+					theme={{
+						colorScheme,
+					}}
+				>
+					<Component {...pageProps} />
+				</MantineProvider>
+			</SWRProvider>
+		</ColorSchemeProvider>
+	)
 }
-
-export default MyApp

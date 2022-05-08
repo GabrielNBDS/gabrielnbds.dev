@@ -1,3 +1,3 @@
-# my site
+## Next boilerplate
 
-Click <a href="https://gabrielnbds.dev">here</a> to take a look.
+Boilerplate com NextJS, Typescript, ESLint, SWR, Mantine e React Icons
